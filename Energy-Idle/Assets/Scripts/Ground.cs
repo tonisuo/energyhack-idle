@@ -25,14 +25,11 @@ public class Ground : MonoBehaviour
 
     void Update(){
         var rotation = 0f;
-
-        rotation += rotatingSpeed * Time.deltaTime;
-        ground.Rotate(new Vector3(0,0,rotation), Space.Self);
         print(RunnerCloseToEdge());
         if(RunnerCloseToEdge()) {
             SpawnGround(CalculatePositionOfNextGround());
         }
-        AdjustRunnerTransform();
+        //AdjustRunnerTransform();
     }
 
     bool RunnerCloseToEdge(){
