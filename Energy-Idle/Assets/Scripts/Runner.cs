@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Runner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+   public Transform runner;
+   public Vector3 movementVector;
+
+   void Awake(){
+       runner = GetComponent<Transform>();
+   }
+
+    void Update(){
+        Move(movementVector);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Move(Vector3 movementVector){
+        runner.position += movementVector * Time.deltaTime;
     }
 }
